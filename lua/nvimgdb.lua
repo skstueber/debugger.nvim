@@ -332,11 +332,11 @@ function NvimGdb.setup()
   vim.api.nvim_set_keymap('c', '<c-e>', "<C-\\>ev:lua.require'nvimgdb.cmake'.select_executable()<cr>", { noremap = true, silent = true })
 
   if vim.g.nvimgdb_disable_start_keymaps == nil or not vim.g.nvimgdb_disable_start_keymaps then
-    vim.api.nvim_set_keymap('n', '<leader>dd', ':GdbStart gdb -q ', { noremap = true })
-    vim.api.nvim_set_keymap('n', '<leader>dl', ':GdbStartLLDB lldb ', { noremap = true })
-    vim.api.nvim_set_keymap('n', '<leader>dp', ':GdbStartPDB python -m pdb main.py', { noremap = true })
-    vim.api.nvim_set_keymap('n', '<leader>db', ':GdbStartBashDB bashdb main.sh', { noremap = true })
-    vim.api.nvim_set_keymap('n', '<leader>dr', ':GdbStartRR', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<leader>bgd', ':GdbStart gdb -q ', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<leader>bld', ':GdbStartLLDB lldb ', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<leader>bpd', ':GdbStartPDB python -m pdb main.py', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<leader>bd', ':GdbStartBashDB bashdb main.sh', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<leader>br', ':GdbStartRR', { noremap = true })
   end
 end
 
