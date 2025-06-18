@@ -20,12 +20,12 @@ and [BASHDB](http://bashdb.sourceforge.net/) integration with NeoVim.
 
 Taken from the neovim: [neovim\_gdb.vim](https://github.com/neovim/neovim/blob/master/contrib/gdb/neovim_gdb.vim)
 
-It is instantly usable: type `<leader>dd`, edit GDB launching command, hit `<cr>`.
-Or type `<leader>dl` to do the same with LLDB backend.
-Or type `<leader>dp` to start debugging a python program.
-Or type `<leader>db` to start debugging a BASH script.
+It is instantly usable: type `<leader>bgd`, edit GDB launching command, hit `<cr>`.
+Or type `<leader>bld` to do the same with LLDB backend.
+Or type `<leader>bpd` to start debugging a python program.
+Or type `<leader>bd` to start debugging a BASH script.
 
-Also you can record the execution of a program with [`rr record`](https://rr-project.org/), and then replay its execution systematically with `<leader>dr`.
+Also you can record the execution of a program with [`rr record`](https://rr-project.org/), and then replay its execution systematically with `<leader>br`.
 
 Supported debuggers and operating systems:
 
@@ -48,7 +48,7 @@ Use the branch `master` for NeoVim ≥ 0.7 or the branch `devel` to benefit from
 If you use vim-plug, add the following line to your vimrc file:
 
 ```vim
-Plug 'sakhnik/nvim-gdb'
+Plug 'skstueber/debugger.nvim'
 ```
 
 ## Options
@@ -91,11 +91,11 @@ See `:help nvimgdb` for the complete online documentation. Most notable commands
 
 | Mapping          | Command                              | Description                                                          |
 |------------------|--------------------------------------|----------------------------------------------------------------------|
-| &lt;Leader&gt;dd | `:GdbStart gdb -q ./a.out`           | Start debugging session, allows editing the launching command        |
-| &lt;Leader&gt;dl | `:GdbStartLLDB lldb ./a.out`         | Start debugging session, allows editing the launching command        |
-| &lt;Leader&gt;dp | `:GdbStartPDB python -m pdb main.py` | Start Python debugging session, allows editing the launching command |
-| &lt;Leader&gt;db | `:GdbStartBashDB bashdb main.sh`     | Start BASH debugging session, allows editing the launching command   |
-| &lt;Leader&gt;dr | `:GdbStartRR`                        | Start debugging session with [`rr replay`](https://rr-project.org/). |
+| &lt;Leader&gt;bgd | `:GdbStart gdb -q ./a.out`           | Start debugging session, allows editing the launching command        |
+| &lt;Leader&gt;bld | `:GdbStartLLDB lldb ./a.out`         | Start debugging session, allows editing the launching command        |
+| &lt;Leader&gt;bpd | `:GdbStartPDB python -m pdb main.py` | Start Python debugging session, allows editing the launching command |
+| &lt;Leader&gt;bd | `:GdbStartBashDB bashdb main.sh`     | Start BASH debugging session, allows editing the launching command   |
+| &lt;Leader&gt;br | `:GdbStartRR`                        | Start debugging session with [`rr replay`](https://rr-project.org/). |
 | &lt;F8&gt;       | `:GdbBreakpointToggle`               | Toggle breakpoint in the coursor line                                |
 | &lt;F4&gt;       | `:GdbUntil`                          | Continue execution until a given line (`until` in gdb)               |
 | &lt;F5&gt;       | `:GdbContinue`                       | Continue execution (`continue` in gdb)                               |
