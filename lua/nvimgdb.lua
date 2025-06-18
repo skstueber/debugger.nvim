@@ -334,8 +334,12 @@ function NvimGdb.setup()
   if vim.g.nvimgdb_disable_start_keymaps == nil or not vim.g.nvimgdb_disable_start_keymaps then
     vim.api.nvim_set_keymap('n', '<leader>bgd', ':GdbStart gdb -q ', { noremap = true })
     vim.api.nvim_set_keymap('n', '<leader>bld', ':GdbStartLLDB lldb ', { noremap = true })
-    vim.api.nvim_set_keymap('n', '<leader>bpd', ':GdbStartPDB python -m pdb main.py', { noremap = true })
-    vim.api.nvim_set_keymap('n', '<leader>bd', ':GdbStartBashDB bashdb main.sh', { noremap = true })
+    -- vim.api.nvim_set_keymap('n', '<leader>bpd', ':GdbStartPDB python3 -m pdb main.py', { noremap = true })
+    vim.keymap.set('n', '<leader>bpd',function()
+        local u_input = vim.fn.input('Enter filename: ')
+        vim.cmd('GdbStartPDB python3 -m pdb ' .. u_input .. '.py')
+      end)
+    vim.api.nvim_set_keymap('n', '<leader>bd', ':GdbStartBashDB bashdb ', { noremap = true })
     vim.api.nvim_set_keymap('n', '<leader>br', ':GdbStartRR', { noremap = true })
   end
 end
