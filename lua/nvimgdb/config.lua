@@ -11,16 +11,16 @@ Config.__index = Config
 
 ---@class ConfDict @default configuration
 local default = {
-  key_until           = '<f4>',
-  key_continue        = '<f5>',
-  key_next            = '<f10>',
-  key_step            = '<f11>',
-  key_finish          = '<f12>',
-  key_breakpoint      = '<f8>',
+  key_until           = '<leader>nu',
+  key_continue        = '<leader>nc',
+  key_next            = '<leader>nn',
+  key_step            = '<leader>ns',
+  key_finish          = '<leader>nf',
+  key_breakpoint      = '<leader>nb',
   key_frameup         = '<c-p>',
   key_framedown       = '<c-n>',
   key_eval            = '<f9>',
-  key_quit            = nil,
+  key_quit            = '<leader>nq',
   set_tkeymaps        = Keymaps.set_t,
   set_keymaps         = Keymaps.set,
   unset_keymaps       = Keymaps.unset,
